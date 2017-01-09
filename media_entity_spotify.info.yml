@@ -1,0 +1,7 @@
+name: Media Entity Spotify
+type: module
+description: Media entity Spotify provider.
+core: 8.x
+package: Media
+dependencies:
+  - media_entity

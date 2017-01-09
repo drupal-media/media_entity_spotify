@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains media_entity_spotify.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function media_entity_spotify_theme($existing, $type, $theme, $path) {
+  return [
+    'media_spotify_embed' => [
+      'variables' => [
+        'uri' => NULL,
+        'player_theme' => NULL,
+        'view' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+      ],
+      'file' => 'media_entity_spotify.theme.inc',
+    ]
+  ];
+}

@@ -1,0 +1,32 @@
+media_entity_spotify.settings:
+  type: config_object
+  label: 'Media entity Spotify settings'
+  mapping:
+    thumbnail_destination:
+      type: string
+      label: 'Destination for thumbnails'
+
+media_entity.bundle.type.spotify:
+  type: mapping
+  label: 'Spotify type configuration'
+  mapping:
+    source_url_field:
+      type: string
+      label: 'Field on the media entity that stores Spotify URL'
+
+field.formatter.settings.spotify_embed:
+  type: mapping
+  label: 'Field display format settings'
+  mapping:
+    width:
+      type: string
+      label: 'Width'
+    height:
+      type: string
+      label: 'Height'
+    theme:
+      type: string
+      label: 'Theme'
+    view:
+      type: string
+      label: 'View'

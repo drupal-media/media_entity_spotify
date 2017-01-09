@@ -1,0 +1,14 @@
+{
+  "name": "drupal/media_entity_spotify",
+  "type": "drupal-module",
+  "description": "Media entity Spotify provider.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/media_entity_spotify",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/media_entity_spotify",
+    "source": "http://cgit.drupalcode.org/media_entity_spotify"
+  },
+  "require": { }
+}
