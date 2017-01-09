@@ -23,6 +23,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class Spotify extends MediaTypeBase {
+
+  /**
+   * @var array
+   */
+  protected $spotify;
+
   /**
    * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
@@ -210,12 +216,14 @@ class Spotify extends MediaTypeBase {
    *  An array of oembed data.
    */
   protected function oEmbed($url) {
-    $spotify = &drupal_static(__FUNCTION__);
+    $this->spotify = &drupal_static(__FUNCTION__);
 
-    if (!isset($spotify)) {
+    if (!isset($this->spotify)) {
       $url = 'https://embed.spotify.com/oembed/?url=' . $url;
       $response = $this->httpClient->get($url);
-      return json_decode((string) $response->getBody(), TRUE);
+      $this->spotify = json_decode((string) $response->getBody(), TRUE);
     }
+
+    return $this->spotify;
   }
 }
