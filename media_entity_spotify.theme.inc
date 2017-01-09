@@ -13,14 +13,12 @@ use Drupal\Core\Url;
  */
 function template_preprocess_media_spotify_embed(&$variables) {
   // Build the embed url.
-  $uri = 'https://embed.spotify.com/?uri=' . $variables['uri'];
-
-  // Build the query.
-  $query = [
+  $url = Url::fromUri('https://embed.spotify.com/', ['query' => [
+    'uri' => $variables['uri'],
     'theme' => $variables['player_theme'],
-    'view' => $variables['view']
-  ];
+    'view' => $variables['view'],
+  ]]);
 
-  $url = Url::fromUri($uri, ['query' => $query]);
+  // Add url to template as string.
   $variables['url'] = $url->toString();
 }
