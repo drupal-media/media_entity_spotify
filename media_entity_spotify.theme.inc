@@ -19,6 +19,12 @@ function template_preprocess_media_spotify_embed(&$variables) {
     'view' => $variables['view'],
   ]]);
 
+  // Spotify has only two recommended embedded player: large (height: 300px) and compact (height: 80px;).
+  // Tracks in list mode always display with height 80px.
+  if ($variables['view'] == 'list' && preg_match('/^spotify\:(track)/', $variables['uri'])) {
+    $variables['height'] = '80px';
+  }
+
   // Add url to template as string.
   $variables['url'] = $url->toString();
 }
